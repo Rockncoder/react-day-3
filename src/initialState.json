@@ -2,7 +2,11 @@
   "vehicles": {},
   "contact": {
     "email":"bosco.jenkins@gmail.com",
-    "username": "bosco"
+    "username": "bosco",
+    "error": {
+      "flag": false,
+      "message": ""
+    }
   },
   "credit": {
     "firstName": "Bosco",

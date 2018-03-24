@@ -11,7 +11,7 @@ export function* createContactRequestSaga(action) {
     yield put(createContactSuccess(response.data));
   } catch (err) {
     console.info(err);
-    yield put(createContactFailure(err));
+    yield put(createContactFailure(err.response));
   }
 }
 

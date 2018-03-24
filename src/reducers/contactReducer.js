@@ -6,8 +6,14 @@ export default (state={}, action) => {
       console.info(action.contact);
       return {...state, ...action.contact};
     case CREATE_CONTACT_FAILURE:
-      console.info('CREATE_CONTACT_FAILURE');
-      return state;
+      console.info(JSON.stringify(action.error));
+      return {
+        ...state,
+        error: {
+          flag: true,
+          message: action.error.data
+        }
+      };
     default:
       return state;
   }
