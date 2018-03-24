@@ -6,7 +6,6 @@ import Button from 'material-ui/Button';
 // import {DisplayFormikState} from './helper';
 import {connect} from 'react-redux';
 
-
 import styles from './Login.css';
 import {createContactRequest} from '../../actions/user';
 
@@ -82,8 +81,8 @@ const eApp = withFormik({
   }),
   handleSubmit(values, {resetForm, setErrors, setSubmitting, submit}) {
     const {email, username, password} = values;
-    const contact = {email, username, password};
-    values.submit(contact);
+    values.submit({email, username, password});
+    setSubmitting(true);
   }
 })(App);
 
