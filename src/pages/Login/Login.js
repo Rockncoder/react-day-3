@@ -68,9 +68,9 @@ const App = (props) => {
 const eApp = withFormik({
   mapPropsToValues({email, password, username, submit, contact}) {
     return {
-      email: email || '',
+      email: email || '', //contact.email,
       password: password || '',
-      username: username || contact.username,
+      username: username || '', //contact.username,
       submit: submit
     }
   },
@@ -83,6 +83,7 @@ const eApp = withFormik({
     const {email, username, password} = values;
     values.submit({email, username, password});
     setSubmitting(true);
+    resetForm();
   }
 })(App);
 
