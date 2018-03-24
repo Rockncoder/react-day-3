@@ -1,6 +1,12 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {createVehiclesRequest} from '../../actions/vehicles';
 
 class Vehicles extends Component {
+  componentDidMount() {
+    this.props.getVehicles({page: 1, limit: 20});
+  }
+
   render() {
     return (
       <div>
@@ -10,4 +16,7 @@ class Vehicles extends Component {
   }
 }
 
-export default Vehicles;
+export default connect(
+  null,
+  {getVehicles: createVehiclesRequest}
+)(Vehicles);

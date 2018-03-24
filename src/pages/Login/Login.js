@@ -84,10 +84,13 @@ const eApp = withFormik({
     username: Yup.string().min(2, 'Username must be at least 2 characters long').required('Username is required'),
     password: Yup.string().min(6, 'Password must be 6 characters or longer').required('Password is required')
   }),
-  handleSubmit(values, {resetForm, setErrors, setSubmitting, submit}) {
+  handleSubmit(values, {resetForm, setErrors, setSubmitting}) {
     const {email, username, password} = values;
     values.submit({email, username, password});
     setSubmitting(true);
+  },
+  clearForm() {
+    console.info('clearing form');
   }
 })(App);
 
