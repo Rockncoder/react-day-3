@@ -2,11 +2,7 @@
   "vehicles": {},
   "contact": {
     "email":"bosco.jenkins@gmail.com",
-    "username": "bosco",
-    "error": {
-      "flag": false,
-      "message": ""
-    }
+    "username": "bosco"
   },
   "credit": {
     "firstName": "Bosco",
@@ -15,5 +11,11 @@
     "city": "Los Angeles",
     "state": "CA",
     "zip": "90023"
+  },
+  "errors": {
+    "error": {
+      "flag": false,
+      "message": ""
+    }
   }
 }

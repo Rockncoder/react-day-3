@@ -10,7 +10,12 @@ import styles from './Login.css';
 import {createContactRequest} from '../../actions/user';
 
 const App = (props) => {
-  const {values, errors, touched, isSubmitting, handleChange, handleBlur} = props;
+  const {values, error, errors, touched, isSubmitting, handleChange, handleBlur} = props;
+  console.info(error);
+  if(error && error.flag){
+    errors.email = error.message;
+  }
+
   return (
     <Form>
       <div>
@@ -66,12 +71,12 @@ const App = (props) => {
 };
 
 const eApp = withFormik({
-  mapPropsToValues({email, password, username, submit, contact}) {
+  mapPropsToValues({email, password, username, submit}) {
     return {
-      email: email || '', //contact.email,
+      email: email || '',
       password: password || '',
-      username: username || '', //contact.username,
-      submit: submit
+      username: username || '',
+      submit: submit,
     }
   },
   validationSchema: Yup.object().shape({
@@ -83,13 +88,13 @@ const eApp = withFormik({
     const {email, username, password} = values;
     values.submit({email, username, password});
     setSubmitting(true);
-    resetForm();
   }
 })(App);
 
 const mapStateToProps = state => {
   return {
     contact: state.contact,
+    error: state.errors.error
   };
 };
 
