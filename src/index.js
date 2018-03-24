@@ -6,7 +6,6 @@ import {createStore, applyMiddleware, combineReducers} from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import {composeWithDevTools} from 'redux-devtools-extension';
 
-// import reducer from './reducer';
 import contactReducer from './reducers/contactReducer';
 import creditReducer from './reducers/creditReducer';
 import vehiclesReducer from './reducers/vehiclesReducer';
@@ -25,7 +24,6 @@ const store = createStore(
   initialState,
   composeWithDevTools(applyMiddleware(sagaMiddleware))
 );
-//   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 
 sagaMiddleware.run(rootSaga);
 

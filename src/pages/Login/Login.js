@@ -66,11 +66,11 @@ const App = (props) => {
 };
 
 const eApp = withFormik({
-  mapPropsToValues({email, password, username, submit}) {
+  mapPropsToValues({email, password, username, submit, contact}) {
     return {
       email: email || '',
       password: password || '',
-      username: username || '',
+      username: username || contact.username,
       submit: submit
     }
   },
@@ -86,4 +86,12 @@ const eApp = withFormik({
   }
 })(App);
 
-export default connect(null, {submit: createContactRequest})(eApp);
+const mapStateToProps = state => {
+  return {
+    contact: state.contact,
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  {submit: createContactRequest})(eApp);

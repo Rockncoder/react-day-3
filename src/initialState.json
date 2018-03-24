@@ -1,6 +1,8 @@
 {
   "vehicles": {},
-  "contact": {},
+  "contact": {
+    "username": "bosco"
+  },
   "credit": {
     "firstName": "Bosco",
     "lastName": "Jenkins",
