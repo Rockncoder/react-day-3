@@ -1,5 +1,4 @@
 {
-  "vehicles": {},
   "contact": {
     "email":"bosco.jenkins@gmail.com",
     "username": "bosco"
@@ -17,5 +16,10 @@
       "flag": false,
       "message": ""
     }
+  },
+  "query": {
+    "page": 1,
+    "limit":20,
+    "vehicles":[]
   }
 }

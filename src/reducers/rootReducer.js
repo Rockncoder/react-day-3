@@ -1,9 +1,9 @@
 import {combineReducers } from 'redux';
 import contact from './contactReducer';
 import credit from './creditReducer';
-import vehicles from './vehiclesReducer';
-import errors from './errorsReducer'
+import errors from './errorsReducer';
+import query from './queryReducer';
 
 export default combineReducers({
-  contact, credit, vehicles, errors,
+  contact, credit, errors, query,
 })

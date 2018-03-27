@@ -8,3 +8,9 @@ This app needs a few backend services in order to run.
 https://tekadept-vehicles.herokuapp.com/vehicle
 
 Holds vehicle information
+
+Redux-Saga/Effects
+takeLatest
+put
+call
+select
